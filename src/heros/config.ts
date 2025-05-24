@@ -66,8 +66,16 @@ export const hero: Field = {
       name: 'media',
       type: 'upload',
       admin: {
-        condition: (_, { type } = {}) =>
-          ['highImpact', 'mediumImpact', 'floatingCrypto'].includes(type),
+        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+      },
+      relationTo: 'media',
+      required: true,
+    },
+    {
+      name: 'media',
+      type: 'upload',
+      admin: {
+        condition: (_, { type } = {}) => ['floatingCrypto'].includes(type),
       },
       relationTo: 'media',
       required: false,
