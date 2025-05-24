@@ -18,7 +18,7 @@ export const FloatingCrypto: React.FC<Page['hero']> = ({ links, media, richText 
     setHeaderTheme('dark')
   }, [setHeaderTheme])
 
-  const video = 'video/Bit_anim_a_v2_640.webm'
+  const video = 'video/Bit_anim_alpha_860 (1).webm'
 
   return (
     <div
@@ -48,13 +48,17 @@ export const FloatingCrypto: React.FC<Page['hero']> = ({ links, media, richText 
           />
         )}
 
-        <video
-          src={video}
-          autoPlay
-          muted
-          loop
-          className="right-10 md:right-20 lg:right-32 xl:right-44 bottom-36 md:bottom-32 lg:bottom-40 xl:bottom-52 -z-10 absolute opacity-95 mx-auto md:mx-0 max-w-[80%] md:max-w-full scale-75"
-        />
+        <div className="pointer-events-none">
+          <video
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            tabIndex={-1}
+            className="hidden md:block right-10 md:right-20 bottom-36 md:bottom-32 -z-10 absolute opacity-90 max-w-[80%] md:max-w-full md:scale-75"
+          />
+        </div>
         <Image
           src={podium}
           alt="Podium"
